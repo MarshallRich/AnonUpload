@@ -19,12 +19,20 @@ public class AnonFile {
     @Column(nullable = false)
     String originalFilename;
 
+    @Column(nullable=false)
+    String comment;
+
+    @Column(nullable = false)
+    boolean isKept = false;
+
     public AnonFile() {
     }
 
-    public AnonFile(String filename, String originalFilename) {
+    public AnonFile(String filename, String originalFilename, String comment, boolean isKept) {
         this.filename = filename;
         this.originalFilename = originalFilename;
+        this.comment = comment;
+        this.isKept = isKept;
     }
 
     public String getFilename() {
@@ -49,5 +57,21 @@ public class AnonFile {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public boolean isKept() {
+        return isKept;
+    }
+
+    public void setKept(boolean kept) {
+        isKept = kept;
     }
 }
