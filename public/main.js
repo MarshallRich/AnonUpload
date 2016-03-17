@@ -4,7 +4,7 @@ function getFiles(filesData) {
         elem.attr("href", "files/" + filesData[i].filename);
         elem.text(filesData[i].comment);
         $("#fileList").append(elem);
-        var elem2 = $("<br>")
+        var elem2 = $("<br>");
         $("#fileList").append(elem2);
     }
 }
